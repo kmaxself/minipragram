@@ -54,25 +54,43 @@ page {
 }
 
 .guide {
-  width: 100%;
+  width: auto;
   padding: 40rpx;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  text-align: center
 }
 
-.guide .headline {
+.guideR {
+  width: auto;
+  padding: 40rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin-right: 40rpx;
+  text-align: center;
+}
+
+.headline {
   font-size: 34rpx;
   font-weight: bold;
   color: #555;
   line-height: 40rpx;
 }
 
-.guide .p {
+.p1 {
   margin-top: 20rpx;
   font-size: 28rpx;
   line-height: 36rpx;
-  color: #666;
+  color: red;
+}
+
+.p2 {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  line-height: 36rpx;
+  color: blue;
 }
 
 .guide .code {
@@ -145,5 +163,11 @@ page {
 .guide .nav .middle {
   margin-left: auto;
   margin-right: auto;
+}
+
+.rowmodel{
+  display:flex;
+  flex-direction: row;
+  justify-content:space-between; 
 }
 

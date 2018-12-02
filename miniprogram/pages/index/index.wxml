@@ -1,13 +1,15 @@
 <!-- 正方 -->
-<view class="guide">
-  <text class="headline">正方获赞数：</text>
-  <text class="p">{{faceTotalNum}}</text>
-</view>
+<view   class="rowmodel" >
+  <view class="guide">
+    <text class="headline">正方支持数：</text>
+    <text class="p1">{{faceTotalNum}}</text>
+  </view>
 
-<!--反方-->
-<view class="guide">
-  <text class="headline">反方获赞数：</text>
-  <text class="p">{{backTotalNum}}</text>
+  <!--反方-->
+  <view class="guideR">
+    <text class="headline">反方支持数：</text>
+    <text class="p2">{{backTotalNum}}</text>
+  </view>
 </view>
 
 
