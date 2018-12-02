@@ -174,14 +174,6 @@ Page({
     console.log('backTotalNum:', this.data.backTotalNum)
   },
 
-  onCollectResult: function () {
-    console.log(onCollectResult)
-    //face
-    // this.faceTotalNum=this.onCollectfaceTotalNum('face')
-    // console.log('faceTotalNum:',faceTotalNum)
-    // //back
-  },
-
   onCollectNum: function (e) {
     console.log('onCollectNum e:', e)
     const db = wx.cloud.database()
