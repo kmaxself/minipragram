@@ -1,0 +1,23 @@
+<!-- 正方 -->
+<view class="guide">
+  <text class="headline">正方获赞数：</text>
+  <text class="p">{{faceTotalNum}}</text>
+</view>
+
+<!--反方-->
+<view class="guide">
+  <text class="headline">反方获赞数：</text>
+  <text class="p">{{backTotalNum}}</text>
+</view>
+
+
+<view class="guide">
+    <div class="nav">
+      <button class="prev" size="mini" type="default"  data-direction='face' bindtap="onSupport" >支持正方</button>
+      <button class="next" size="mini" type="default" data-direction='back' bindtap="onSupport">支持反方</button>
+    </div>
+    <p></p>
+    <div class="nav">
+      <button class="middle" size="mini" type="default" bindtap="onCountTotalScore">刷新比分</button>
+    </div>
+</view>
