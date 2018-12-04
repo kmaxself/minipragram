@@ -57,6 +57,13 @@ Page({
 
   onSupport: function (e) {
     console.log('onsupport : ', e)
+    wx.showToast({
+      title: '',
+      icon:'loading',
+      mask:true,
+      duration:5000
+    })
+
     //获取button的传参
     var direction = e.currentTarget.dataset.direction
     console.log('direction:', direction)
@@ -77,9 +84,9 @@ Page({
         console.log("22234232")
         console.log(res.data)
         //如果已获取数据则提示已支持
-        if (res.data.length === 1) {
+        if (res.data.length >= 1) {
           wx.showToast({
-            title: '您已支持该持方',
+            title: '真棒'
           })
         }
         //之前未支持，插入数据
@@ -120,7 +127,6 @@ Page({
   },
 
   onRemove: function (e) {
-    console.log('owenId:', e)
     if (e) {
       console.log('begin to delete _Id', e)
       const db = wx.cloud.database()
@@ -149,7 +155,7 @@ Page({
       success: res => {
         // 在返回结果中会包含新创建的记录的 _id
         wx.showToast({
-          title: '支持成功，对方讲的好，您扔可以改变您的观点哦',
+          title: '支持成功',
         })
         //刷新比分
         this.onCountTotalScore()

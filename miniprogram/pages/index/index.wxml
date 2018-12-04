@@ -1,25 +1,21 @@
 <!-- 正方 -->
 <view   class="rowmodel" >
   <view class="guide">
-    <text class="headline">正方支持数：</text>
+    <text class="headline">正方</text>
     <text class="p1">{{faceTotalNum}}</text>
   </view>
 
   <!--反方-->
   <view class="guideR">
-    <text class="headline">反方支持数：</text>
+    <text class="headline">反方</text>
     <text class="p2">{{backTotalNum}}</text>
   </view>
 </view>
 
-
-<view class="guide">
+<view class="guide" >
     <div class="nav">
-      <button class="prev" size="mini" type="default"  data-direction='face' bindtap="onSupport" >支持正方</button>
-      <button class="next" size="mini" type="default" data-direction='back' bindtap="onSupport">支持反方</button>
-    </div>
-    <p></p>
-    <div class="nav">
-      <button class="middle" size="mini" type="default" bindtap="onCountTotalScore">刷新比分</button>
+      <button class="faceButton"  style="background-image:url('https://7072-prod-f90609-1258198699.tcb.qcloud.la/fish_trans.jpg');"   data-direction='face'  bindtap="onSupport" ></button>
+      <button class="freshButton"  style="background-image:url('https://7072-prod-f90609-1258198699.tcb.qcloud.la/fresh.png');" type="default" bindtap="onCountTotalScore"></button>
+      <button class="backButton" style="background-image:url('https://7072-prod-f90609-1258198699.tcb.qcloud.la/bear_trans.png');"  size="mini" type="default" data-direction='back' bindtap="onSupport"></button>
     </div>
 </view>

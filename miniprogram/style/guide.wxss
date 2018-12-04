@@ -73,7 +73,7 @@ page {
 }
 
 .headline {
-  font-size: 34rpx;
+  font-size: 100rpx;
   font-weight: bold;
   color: #555;
   line-height: 40rpx;
@@ -81,14 +81,14 @@ page {
 }
 
 .p1 {
-  margin-top: 80rpx;
+  margin-top: 100rpx;
   font-size: 100rpx;
   line-height: 36rpx;
   color: red;
 }
 
 .p2 {
-  margin-top: 80rpx;
+  margin-top: 100rpx;
   font-size: 100rpx;
   line-height: 36rpx;
   color: blue;
@@ -167,8 +167,42 @@ page {
 }
 
 .rowmodel{
+  margin-top: 20rpx;
   display:flex;
   flex-direction: row;
   justify-content:space-between; 
 }
 
+.faceButton{
+  margin-left: unset;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width:196rpx;
+  height: 242rpx;
+  border-color: red;
+  border:1rpx;
+}
+
+.backButton{
+  margin-right: unset;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width:196rpx;
+  height: 242rpx;
+  border-color: red;
+  border:1rpx;
+}
+
+.freshButton{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width:100rpx;
+  height: 100rpx;
+  border:none;
+}
+
+button::after{border:0}
