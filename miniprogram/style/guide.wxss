@@ -205,4 +205,50 @@ page {
   border:none;
 }
 
+.thanks{
+  border:1rpx;
+
+}
+
+.bottom{
+  width: auto;
+  height: auto;
+  padding: 40rpx;
+  box-sizing: border-box;
+  margin-bottom: 20;
+  display: flex;
+  flex-direction: column;
+  text-align: center
+}
+
+.bottom-text{
+  font-size: 28rpx;
+  line-height: 36rpx;
+  color: #666;
+  background: white;
+  white-space: pre;
+}
+
+.friend{
+  width: auto;
+  height: auto;
+  padding: 40rpx;
+  padding-bottom: 10rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-size: 28rpx;
+  line-height: 36rpx;
+  color: #666;
+}
+
+.txt-light{
+  text-align: middle;
+  font-size: 32rpx;
+  line-height: 36rpx;
+  color: #666;
+}
+
+
 button::after{border:0}

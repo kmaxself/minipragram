@@ -14,8 +14,34 @@
 
 <view class="guide" >
     <div class="nav">
-      <button class="faceButton"  style="background-image:url('https://7072-prod-f90609-1258198699.tcb.qcloud.la/fish_trans.jpg');"   data-direction='face'  bindtap="onSupport" ></button>
+      <button class="faceButton"  style="background-image:url('https://7072-prod-f90609-1258198699.tcb.qcloud.la/fish_trans.jpg');"   data-direction='face'  bindtap="onSupport" disabled='{{disableValue}}' ></button>
       <button class="freshButton"  style="background-image:url('https://7072-prod-f90609-1258198699.tcb.qcloud.la/fresh.png');" type="default" bindtap="onCountTotalScore"></button>
-      <button class="backButton" style="background-image:url('https://7072-prod-f90609-1258198699.tcb.qcloud.la/bear_trans.png');"  size="mini" type="default" data-direction='back' bindtap="onSupport"></button>
+      <button class="backButton" style="background-image:url('https://7072-prod-f90609-1258198699.tcb.qcloud.la/bear_trans.png');"  size="mini" type="default" data-direction='back' bindtap="onSupport" disabled='{{disableValue}}'></button>
     </div>
 </view>
+
+<view class="bottom">
+  <text class="bottom-text">------感谢金主供应链金服对本节目的赞助！-----</text>
+</view>
+
+<view class="friend">
+  <text>节目官方合作伙伴：</text>
+</view>
+<swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="6000">
+  <view class='list'>
+    <view>
+      <swiper-item>
+        <text class='txt-light'>贷款科技产品部</text>
+      </swiper-item>
+      <swiper-item>
+        <text class='txt-light'>存款科技产品部</text>
+      </swiper-item>
+      <swiper-item>
+        <text class='txt-light'>基础科技产品部</text>
+      </swiper-item>
+      <swiper-item>
+        <text class='txt-light'>广告位招租部</text>
+      </swiper-item>      
+    </view>
+  </view>
+</swiper>

@@ -12,6 +12,7 @@ Page({
     faceNum: 0,
     backNum: 0,
     ownerId: '',
+    disableValue:false,
   },
 
   /**
@@ -56,13 +57,16 @@ Page({
   },
 
   onSupport: function (e) {
-    console.log('onsupport : ', e)
-    wx.showToast({
-      title: '',
-      icon:'loading',
-      mask:true,
-      duration:5000
+    this.setData({
+      disableValue:true
     })
+    console.log('onsupport : ', e)
+    // wx.showToast({
+    //   title: '',
+    //   icon:'loading',
+    //   mask:true,
+    //   duration:5000
+    // })
 
     //获取button的传参
     var direction = e.currentTarget.dataset.direction
@@ -81,12 +85,11 @@ Page({
       _openid: this.data.openid
     }).get({
       success: res => {
-        console.log("22234232")
         console.log(res.data)
         //如果已获取数据则提示已支持
         if (res.data.length >= 1) {
           wx.showToast({
-            title: '真棒'
+            title: '已支持该方'
           })
         }
         //之前未支持，插入数据
@@ -99,6 +102,10 @@ Page({
       fail: err => {
         console.log('投票失败')
       }
+    })
+
+    this.setData({
+      disableValue: false
     })
 
   },
@@ -155,7 +162,7 @@ Page({
       success: res => {
         // 在返回结果中会包含新创建的记录的 _id
         wx.showToast({
-          title: '支持成功',
+          title: '3Q',
         })
         //刷新比分
         this.onCountTotalScore()
