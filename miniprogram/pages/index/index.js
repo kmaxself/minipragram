@@ -61,12 +61,12 @@ Page({
       disableValue:true
     })
     console.log('onsupport : ', e)
-    // wx.showToast({
-    //   title: '',
-    //   icon:'loading',
-    //   mask:true,
-    //   duration:5000
-    // })
+    wx.showToast({
+      title: '',
+      icon:'loading',
+      mask:true,
+      duration:10000
+    })
 
     //获取button的传参
     var direction = e.currentTarget.dataset.direction
@@ -107,6 +107,10 @@ Page({
     this.setData({
       disableValue: false
     })
+
+
+
+
 
   },
 

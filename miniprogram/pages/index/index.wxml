@@ -20,12 +20,12 @@
     </div>
 </view>
 
-<view class="bottom">
+<!-- <view class="bottom">
   <text class="bottom-text">------感谢金主供应链金服对本节目的赞助！-----</text>
-</view>
+</view> -->
 
-<view class="friend">
-  <text>节目官方合作伙伴：</text>
+<view class="bottom">
+  <text class="bottom-text" style="content-align:center;">------本节目官方合作伙伴：------</text>
 </view>
 <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="6000">
   <view class='list'>
