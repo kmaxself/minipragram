@@ -1,6 +1,6 @@
 <!-- 正方 -->
 <view   class="rowmodel" >
-  <view class="guide">
+  <view class="guideL">
     <text class="headline">正方</text>
     <text class="p1">{{faceTotalNum}}</text>
   </view>
@@ -25,23 +25,38 @@
 </view> -->
 
 <view class="bottom">
-  <text class="bottom-text" style="content-align:center;">------本节目官方合作伙伴：------</text>
+  <text class="bottom-text" style="content-align:center;">------ 本节目官方合作伙伴 ------</text>
 </view>
-<swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="6000">
-  <view class='list'>
-    <view>
+<view class="swider_container">
+<view class="swiper">
+<swiper class="swider_container" vertical="true" autoplay="true" circular="true" interval="3000">
       <swiper-item>
-        <text class='txt-light'>贷款科技产品部</text>
+          <image src="https://7072-prod-f90609-1258198699.tcb.qcloud.la/ads/1.jpg" class="slide-image" mode="aspectFill"/> 
       </swiper-item>
       <swiper-item>
-        <text class='txt-light'>存款科技产品部</text>
-      </swiper-item>
+          <image src="https://7072-prod-f90609-1258198699.tcb.qcloud.la/ads/2.jpg" class="slide-image" mode="aspectFill"/> 
+      </swiper-item>   
       <swiper-item>
-        <text class='txt-light'>基础科技产品部</text>
-      </swiper-item>
+          <image src="https://7072-prod-f90609-1258198699.tcb.qcloud.la/ads/3.jpg" class="slide-image" mode="aspectFill"/> 
+      </swiper-item> 
       <swiper-item>
-        <text class='txt-light'>广告位招租部</text>
-      </swiper-item>      
-    </view>
-  </view>
+          <image src="https://7072-prod-f90609-1258198699.tcb.qcloud.la/ads/4.jpg" class="slide-image" mode="aspectFill"/> 
+      </swiper-item> 
+      <swiper-item>
+          <image src="https://7072-prod-f90609-1258198699.tcb.qcloud.la/ads/5.jpg" class="slide-image" mode="aspectFill"/> 
+      </swiper-item> 
+      <swiper-item>
+          <image src="https://7072-prod-f90609-1258198699.tcb.qcloud.la/ads/6.jpg" class="slide-image" mode="aspectFill"/> 
+      </swiper-item> 
+      <swiper-item>
+          <image src="https://7072-prod-f90609-1258198699.tcb.qcloud.la/ads/7.jpg" class="slide-image" mode="aspectFill"/> 
+      </swiper-item> 
+      <swiper-item>
+          <image src="https://7072-prod-f90609-1258198699.tcb.qcloud.la/ads/8.jpg" class="slide-image" mode="aspectFill"/> 
+      </swiper-item> 
+      <swiper-item>
+          <image src="https://7072-prod-f90609-1258198699.tcb.qcloud.la/ads/9.jpg" class="slide-image" mode="aspectFill"/> 
+      </swiper-item>                                              
 </swiper>
+</view>
+</view>

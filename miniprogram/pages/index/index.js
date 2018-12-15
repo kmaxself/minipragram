@@ -65,7 +65,7 @@ Page({
       title: '',
       icon:'loading',
       mask:true,
-      duration:10000
+      duration:1000
     })
 
     //获取button的传参
@@ -166,7 +166,7 @@ Page({
       success: res => {
         // 在返回结果中会包含新创建的记录的 _id
         wx.showToast({
-          title: '3Q',
+          title: '感谢支持',
         })
         //刷新比分
         this.onCountTotalScore()
@@ -174,10 +174,10 @@ Page({
         console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
       },
       fail: err => {
-        wx.showToast({
-          icon: 'none',
-          title: '支持失败'
-        })
+        // wx.showToast({
+        //   icon: 'none',
+        //   title: '支持失败'
+        // })
         console.error('[数据库] [新增记录] 失败：', err)
       }
     })

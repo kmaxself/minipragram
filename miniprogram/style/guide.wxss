@@ -59,9 +59,18 @@ page {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  text-align: center
+  text-align: center;
+  height:35vh;
 }
 
+.guideL {
+  width: auto;
+  padding: 40rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  text-align: center
+}
 .guideR {
   width: auto;
   padding: 40rpx;
@@ -171,6 +180,7 @@ page {
   display:flex;
   flex-direction: row;
   justify-content:space-between; 
+  height: 20vh;
 }
 
 .faceButton{
@@ -212,13 +222,13 @@ page {
 
 .bottom{
   width: auto;
-  height: auto;
+  height: 13vh;
   box-sizing: border-box;
-  margin-top:100rpx;
-  margin-bottom: 20;
+  padding-top:8vh;
+  padding-bottom: 5vh;
   display: flex;
   flex-direction: column;
-  text-align: center
+  text-align: center;
 }
 
 .bottom-text{
@@ -228,19 +238,7 @@ page {
   white-space: pre;
 }
 
-.friend{
-  width: auto;
-  height: auto;
-  padding: 40rpx;
-  padding-bottom: 10rpx;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  font-size: 28rpx;
-  line-height: 36rpx;
-  color: #666;
-}
+
 
 .txt-light{
   text-align: middle;
@@ -251,3 +249,24 @@ page {
 
 
 button::after{border:0}
+
+
+.swiper image{
+  width: 100%;
+  height: 100%; 
+}
+
+.slide-image{
+  width: 100%;
+  height: 100%; 
+}
+
+.swider_container {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin-bottom: 0;
+    height: 32vh;
+}
