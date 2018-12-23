@@ -196,19 +196,19 @@ Page({
     const db = wx.cloud.database()
     db.collection('vote').where({
       direction: e
-    }).get({
+    }).count({
       success: res => {
         console.log(res.data)
         if (e === 'face') {
           console.log('face 111')
           this.setData({
-            faceTotalNum: res.data.length
+            faceTotalNum: res.total
           })
           console.log('2:', faceTotalNum)
         } else {
           console.log('back 111')
           this.setData({
-            backTotalNum: res.data.length
+            backTotalNum: res.total
           })
         }
         console.log('faceTotalNum after collect:', this.data.faceTotalNum)
