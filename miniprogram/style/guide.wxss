@@ -187,7 +187,7 @@ page {
   margin-left: unset;
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  width:196rpx;
+  width:280rpx;
   height: 242rpx;
   border-color: red;
   border:1rpx;
@@ -197,7 +197,7 @@ page {
   margin-right: unset;
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  width:196rpx;
+  width:230rpx;
   height: 242rpx;
   border-color: red;
   border:1rpx;
@@ -263,7 +263,6 @@ button::after{border:0}
 
 .swider_container {
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-
     flex-direction: column;
     justify-content: space-between;
     box-sizing: border-box;

@@ -9,54 +9,34 @@
   <view class="guideR">
     <text class="headline">反方</text>
     <text class="p2">{{backTotalNum}}</text>
-  </view>
+  </view> 
 </view>
 
 <view class="guide" >
     <div class="nav">
-      <button class="faceButton"  style="background-image:url('https://7072-prod-f90609-1258198699.tcb.qcloud.la/fish_trans.jpg');"   data-direction='face'  bindtap="onSupport" disabled='{{disableValue}}' ></button>
+      <button class="faceButton"  style="background-image:url('https://7072-prod-f90609-1258198699.tcb.qcloud.la/鱼2.png?sign=940db019b3db585ed57103764ecab487&t=1576058245');"   data-direction='face'  bindtap="onSupport" disabled='{{disableValue}}' ></button>
       <button class="freshButton"  style="background-image:url('https://7072-prod-f90609-1258198699.tcb.qcloud.la/fresh.png');" type="default" bindtap="onCountTotalScore"></button>
-      <button class="backButton" style="background-image:url('https://7072-prod-f90609-1258198699.tcb.qcloud.la/bear_trans.png');"  size="mini" type="default" data-direction='back' bindtap="onSupport" disabled='{{disableValue}}'></button>
+      <button class="backButton" style="background-image:url('https://7072-prod-f90609-1258198699.tcb.qcloud.la/熊.png?sign=dad769bc26ad503fb2f8dcdba2e0d380&t=1576058274');"  size="mini" type="default" data-direction='back' bindtap="onSupport" disabled='{{disableValue}}'></button>
     </div>
 </view>
-
-<!-- <view class="bottom">
-  <text class="bottom-text">------感谢金主供应链金服对本节目的赞助！-----</text>
+ <!-- <text class="p2">{{hiddenName}}</text> -->
+ <!-- <view class="bottom" hidden="{{hiddenName}}">
+  <div>
+        <button class="backButton" style="background-image:url('https://7072-prod-f90609-1258198699.tcb.qcloud.la/right.png?sign=6c13ed4b463a0782eab000c7b4118613&t=1576052684');"  size="mini" type="default" data-direction='back' bindtap="onRemoveAllCounter" disabled='{{disableValue}}'></button>
+            <text class="p2">{{openid}}</text>
+  </div>
 </view> -->
 
 <view class="bottom">
-  <text class="bottom-text" style="content-align:center;">------ 本节目官方合作伙伴 ------</text>
+  <text class="bottom-text" style="content-align:center;"></text>
 </view>
 <view class="swider_container">
 <view class="swiper">
-<swiper class="swider_container" vertical="true" autoplay="true" circular="true" interval="3000">
+<swiper class="swider_container" vertical="true" autoplay="false" circular="false" interval="3000">
       <swiper-item>
-          <image src="https://7072-prod-f90609-1258198699.tcb.qcloud.la/ads/1.jpg" class="slide-image" mode="aspectFill"/> 
+          <image src="https://7072-prod-f90609-1258198699.tcb.qcloud.la/bottom2.png?sign=95427cd1182dfea579be6579f02dc47a&t=1576058608" class="slide-image" mode="aspectFill" width = "100%" height = "100%" mode='widthFix'/> 
       </swiper-item>
-      <swiper-item>
-          <image src="https://7072-prod-f90609-1258198699.tcb.qcloud.la/ads/2.jpg" class="slide-image" mode="aspectFill"/> 
-      </swiper-item>   
-      <swiper-item>
-          <image src="https://7072-prod-f90609-1258198699.tcb.qcloud.la/ads/3.jpg" class="slide-image" mode="aspectFill"/> 
-      </swiper-item> 
-      <swiper-item>
-          <image src="https://7072-prod-f90609-1258198699.tcb.qcloud.la/ads/4.jpg" class="slide-image" mode="aspectFill"/> 
-      </swiper-item> 
-      <swiper-item>
-          <image src="https://7072-prod-f90609-1258198699.tcb.qcloud.la/ads/5.jpg" class="slide-image" mode="aspectFill"/> 
-      </swiper-item> 
-      <swiper-item>
-          <image src="https://7072-prod-f90609-1258198699.tcb.qcloud.la/ads/6.jpg" class="slide-image" mode="aspectFill"/> 
-      </swiper-item> 
-      <swiper-item>
-          <image src="https://7072-prod-f90609-1258198699.tcb.qcloud.la/ads/7.jpg" class="slide-image" mode="aspectFill"/> 
-      </swiper-item> 
-      <swiper-item>
-          <image src="https://7072-prod-f90609-1258198699.tcb.qcloud.la/ads/8.jpg" class="slide-image" mode="aspectFill"/> 
-      </swiper-item> 
-      <swiper-item>
-          <image src="https://7072-prod-f90609-1258198699.tcb.qcloud.la/ads/9.jpg" class="slide-image" mode="aspectFill"/> 
-      </swiper-item>                                              
+                                            
 </swiper>
 </view>
 </view>

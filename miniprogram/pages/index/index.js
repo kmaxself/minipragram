@@ -13,6 +13,7 @@ Page({
     backNum: 0,
     ownerId: '',
     disableValue:false,
+    hiddenName:true,
   },
 
   /**
@@ -41,6 +42,13 @@ Page({
         this.setData({
           openid: res.result.openid
         })
+        console.log('2222222222' + res.result.openid)
+        if (res.result.openid == 'olWVs5dtRvuk_tCC09e1KPfmZuq0') {
+          console.log('显示删除按钮 ')
+          this.setData({
+            hiddenName: false
+          })
+        }
       },
       fail: err => {
         console.log('get openid fail')
@@ -153,6 +161,37 @@ Page({
         }
       })
     }
+  },
+
+  onRemoveAllCounter: function (e) {
+    console.log("begin to remove counter all data")
+    const cloud = require('wx-server-sdk')
+    const db = cloud.database()
+    const _ = db.command
+
+    exports.main = async (event, context) => {
+      try {
+        return await db.collection('counter').where({
+          done: true
+        }).remove()
+      } catch (e) {
+        console.error(e)
+      }
+    }
+
+    // if (e) {
+    //   console.log('begin to delete _Id', e)
+    //   const db = wx.cloud.database()
+    //   db.collection('counter').doc(e).remove({
+    //     success: res => {
+ 
+    //       this.onCountTotalScore()
+    //     },
+    //     fail: err => {
+    //       console.error('[数据库] [删除记录] 失败：', err)
+    //     }
+    //   })
+    // }
   },
 
   onAdd: function (e) {
