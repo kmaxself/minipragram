@@ -13,21 +13,35 @@ Page({
     backNum: 0,
     ownerId: '',
     disableValue:false,
-    hiddenName:true,
+    hiddenName:false,
+    activateTitle:'',
+    activateTitleId:'',
+    activateFacePoint:'',
+    activateBackPoint:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log("onload###############################################");
     if (app.globalData.openid) {
       this.setData({
         openid: app.globalData.openid
-      })
+      });
+      if (app.globalData.openid == 'olWVs5dtRvuk_tCC09e1KPfmZuq0') {
+        console.log('显示删除按钮 ')
+        this.setData({
+          hiddenName: true
+        })
+      }
     } else {
       this.onGetOpenId()
     }
-    this.onCountTotalScore()
+    var that = this;
+    setInterval(function(){
+      that.onCountTotalScore()
+    },3000)
   },
 
   /**
@@ -46,7 +60,7 @@ Page({
         if (res.result.openid == 'olWVs5dtRvuk_tCC09e1KPfmZuq0') {
           console.log('显示删除按钮 ')
           this.setData({
-            hiddenName: false
+            hiddenName: true
           })
         }
       },
@@ -56,15 +70,7 @@ Page({
     })
   },
 
-  onSupportFace: function () {
-    console.log("support face")
-  },
-
-  onSupportBack: function () {
-    console.log("support back")
-  },
-
-  onSupport: function (e) {
+  onSupport: async function (e) {
     this.setData({
       disableValue:true
     })
@@ -88,9 +94,12 @@ Page({
     }
     const db = wx.cloud.database()
     console.log('openid :', this.data.openid)
+    // const currentActiveTitle = await this.syncQueryCurentSchedule();
+    
     db.collection('vote').where({
       direction: direction,
-      _openid: this.data.openid
+      _openid: this.data.openid,
+      titleId: this.data.activateTitleId
     }).get({
       success: res => {
         console.log(res.data)
@@ -116,10 +125,6 @@ Page({
       disableValue: false
     })
 
-
-
-
-
   },
 
   onDeleteOppositeIdea: function (e) {
@@ -127,7 +132,8 @@ Page({
     const db = wx.cloud.database()
     db.collection('vote').where({
       _openid: this.data.openid,
-      direction: idea
+      direction: idea,
+      titleId:this.data.activateTitleId
     }).get({
       success: res => {
         console.log('kasdf:', res.data)
@@ -200,7 +206,8 @@ Page({
     const db = wx.cloud.database()
     db.collection('vote').add({
       data: {
-        direction: idea
+        direction: idea,
+        titleId:this.data.activateTitleId
       },
       success: res => {
         // 在返回结果中会包含新创建的记录的 _id
@@ -222,13 +229,59 @@ Page({
     })
   },
 
-  onCountTotalScore: function () {
-    console.log('faceTotalNum:', this.data.faceTotalNum)
-    this.onCollectNum('face')
-    console.log('faceTotalNum after collect:', this.data.faceTotalNum)
-    this.onCollectNum('back')
+  onCountTotalScore: async function () {
+    console.log('faceTotalNum:', this.data.faceTotalNum);
+    const currentActiveTitle = await this.syncQueryCurentSchedule();
+    console.log('current title : '+currentActiveTitle.data[0].title);
+    this.setData({
+      activateTitleId: currentActiveTitle.data[0]._id,
+      activateFacePoint: currentActiveTitle.data[0].face_standpoint,
+      activateBackPoint: currentActiveTitle.data[0].back_standpoint,
+      activateTitle: currentActiveTitle.data[0].title
+    });
+    console.log('activate title : ', this.data.activateTitle);
+    console.log('activate id:',this.data.activateTitleId);
+    var resback1 = await this.syncCollectVoteResult('face');
+    var res2 = await this.syncCollectVoteResult('back')
     console.log('backTotalNum:', this.data.backTotalNum)
   },
+
+  syncCollectVoteResult(e){
+    return new Promise((resolve, reject) => {
+      console.log('onCollectNum e:', e)
+      const db = wx.cloud.database()
+      console.log("333333: ",this.data.activateTitleId)
+      db.collection('vote').where({
+        direction: e,
+        titleId:this.data.activateTitleId
+      }).count({
+        success: res1 => {
+         console.log(res1)
+          if (e === 'face') {
+            console.log('face 111')
+            console.log('res1.total : ',res1.total)
+            this.setData({
+              faceTotalNum: res1.total
+            })
+            console.log("1111")
+            // console.log('2:', this.faceTotalNum)
+          } else {
+            console.log('back 111')
+            this.setData({
+              backTotalNum: res1.total
+            })
+          }
+          resolve(res1);
+          console.log('faceTotalNum after collect:', this.data.faceTotalNum)
+          console.log('backTotalNum after collect:', this.data.backTotalNum)
+        },
+        fail: err => {
+          console.log('fail to query data')
+        }
+      })
+    });
+  },
+
 
   onCollectNum: function (e) {
     console.log('onCollectNum e:', e)
@@ -308,5 +361,30 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  /**
+   * 获取活跃辩题
+   */
+  syncQueryCurentSchedule(){
+    return new Promise((resolve, reject) => {
+      console.log('syncQueryCurentSchedule')
+      const db = wx.cloud.database()
+      db.collection('schedule').where({
+        activation: 'Y'
+      }).get({
+        success: res1 => {
+         console.log(res1)
+          resolve(res1);
+        },
+        fail: err => {
+          console.log('fail to query data')
+        }
+      })
+    });
   }
+
+
+
+
 })

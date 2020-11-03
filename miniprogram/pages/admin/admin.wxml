@@ -1,0 +1,29 @@
+<scroll-view scroll-x="true">
+<view class="table">
+ <view class="tr bg-w">
+ <view class="th">题号</view>
+ <view class="th ">操作</view>
+ <view class="th" width="200px">辩题</view>
+ <view class="th">正方观点</view>
+ <view class="th">正方票数</view>
+ <view class="th ">反方观点</view>
+ <view class="th ">反方票数</view>
+ </view>
+ <block wx:for="{{scheduleList}}"  wx:key="{{index}}"  wx:for-item="itemName">
+ <view class="tr">
+ <view class="td">{{itemName.titleNo}}</view>
+ <view class="td_link" wx:if="{{itemName.activation == 'Y'}}" catchtap="closeCurrentVote" data-index="{{index}}">
+    结束投票
+   </view>
+ <view class="td_link2" wx:else catchtap="openCurrentVote" data-index="{{index}}"> 开始投票 </view>
+ <view class="td_title">{{itemName.title}}</view>
+ <view class="td">{{itemName.face_standpoint}}</view>
+ <view class="td">{{itemName.faceNum}}</view>
+ <view class="td">{{itemName.back_standpoint}}</view>
+ <view class="td">{{itemName.backNum}}</view>
+ </view>
+ </block>
+</view>
+</scroll-view>
+<view><p></p></view>
+<navigator url="/pages/index/index" hover-class="navigator-hover">返回首页</navigator>
